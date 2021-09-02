@@ -1,0 +1,19 @@
+{
+  "f":"HTML5",
+  "a": "lang=\"pt\"",
+  "h": [
+    {
+      "t": "meta",
+      "charset": "UTF-8"
+    },
+    {
+      "f": "Inject CSS",
+      "s": "index.css" 
+    },
+    {
+      "t": "title",
+      "i": "Potato; O TCC da Elisa"
+    }
+  ],
+  "b": "Hi!"
+}

@@ -1,0 +1,17 @@
+[
+	{
+		"date":"2021-09-01",
+		"time": 300,
+		"topic": "Site",
+		"content": [
+			{
+				"t": "p",
+				"i": "Crianção do repositório do projeto, design do novo layout do site e preparação do sistema de renderização dele."
+			},
+			{
+				"t": "p",
+				"i": "O sistema basicamente consiste em um render de JSON para HTML extensível por módulos. Assim os log de trabalho podem ser registrados de um modo que permita gerar estatísticas e gerar uma página."
+			}
+		]
+	}
+]

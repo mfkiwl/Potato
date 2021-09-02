@@ -1,0 +1,25 @@
+[
+	{
+		"date":"2021-06-04",
+		"time": 120,
+		"topic": "FPGA",
+		"content": [
+			{
+				"t": "p",
+				"i": [
+					"Teste de configuração da FPGA Artix-7. Além da preparação do ambiente (criação de máquina virtual e instalação do Vivado), realizei os experimentos disponibilizados pelo fabricante da placa (",
+					{
+						"t": "a",
+						"href": "https://github.com/ChinaQMTECH/XC7A100T-200T_Wukong_Board",
+						"i": "repo aqui"
+					},
+					")."
+				]
+			},
+			{
+				"t": "p",
+				"i": "Obter a placa foi um processo relativemente tranquilo, exceto pelo fato de eu ter enviado um endereço inválido. Com isso, ao chegar no correios da minha cidade, o pacote é devolvido para a china 🤯. Felizmente dei sorte ao consguir comprar uma segunda JTAG no Mercado Livre (a primeira está voltando pra china) e de recuperar o pacote com a FPGA em si. A lição do dia é: revise o endereço de entrega!"
+			}
+		]
+	}
+]
