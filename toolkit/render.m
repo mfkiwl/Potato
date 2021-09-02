@@ -9,6 +9,25 @@
   if(self) {
       [self setSkeletonExtension: @".skeleton"];
       [self setSymbols:[[NSMutableDictionary alloc] init]];
+      [self setSelfClosingTags:[NSSet setWithArray: @[
+          @"area",
+          @"base",
+          @"br",
+          @"col",
+          @"embed",
+          @"hr",
+          @"img",
+          @"input",
+          @"link",
+          @"meta",
+          @"param",
+          @"source",
+          @"track",
+          @"wbr",
+          @"command",
+          @"keygen",
+          @"menuitem"
+      ]]];
   }
 
   return self;
@@ -62,6 +81,8 @@
 }
 
 - (NSString *)recursiveRenderOf:(id)object {
+    if(object == nil) return @"";
+    
     if([object isKindOfClass: [NSDictionary class]]) {
         NSDictionary *dic = object;
         NSString *fvalue = [dic valueForKey:@"f"];
@@ -70,9 +91,36 @@
             if(fpair != nil) {
                 return ((DynamicParserHandler *) fpair(NO))(self, object);
             }
+        } else {
+            // Threat as a t-i tag
+            NSString *tagName = [dic valueForKey:@"t"];
+            if(tagName == nil) tagName = @"error";
+            
+            NSString *attributes = @"";
+            for(NSString *key in dic) {
+                if([key isEqualToString:@"t"] || [key isEqualToString:@"i"]) continue;
+                NSString *value = [dic valueForKey:key];
+                attributes = [NSString stringWithFormat:@"%@ %@=\"%@\"", attributes, key, value];
+            }
+            
+            if([[self selfClosingTags] containsObject:tagName]) {
+                return [NSString stringWithFormat:@"<%@ %@/>", tagName, attributes];
+            }
+            
+            return [NSString stringWithFormat:@"<%@ %@>%@<%@/>", tagName, attributes, [self recursiveRenderOf:[dic valueForKey:@"i"]], tagName];
+            
         }
+    } else if([object isKindOfClass: [NSArray class]]) {
+        NSString *content = @"";
+        for(id item in object) {
+            content = [NSString stringWithFormat:@"%@%@", content, [self recursiveRenderOf:item]];
+        }
+        return content;
+    } else if([object isKindOfClass: [NSString class]]) {
+        return [NSString stringWithString:object];
     }
-    return @"NOTREADY";
+    
+    return @"Unknown Type";
 }
 
 - (void)dealloc {

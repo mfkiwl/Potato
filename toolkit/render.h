@@ -9,6 +9,7 @@ typedef void * (^Pair) (BOOL);
 
 @property NSString *skeletonExtension;
 @property NSMutableDictionary<NSString *, Pair> *symbols;
+@property NSSet<NSString *> *selfClosingTags;
 
 - (void)addModuleAt:(NSString *)path;
 - (void)renderPagesAt:(NSString *)folder to:(NSString *)renderedFolder;

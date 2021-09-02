@@ -11,7 +11,7 @@
 		4CE2073F26E0056D005FE571 /* render_interface.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2073A26E0056C005FE571 /* render_interface.m */; };
 		4CE2074026E0056D005FE571 /* root_patch.c in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2073C26E0056C005FE571 /* root_patch.c */; };
 		4CE2074126E0056D005FE571 /* render.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2073E26E0056C005FE571 /* render.m */; };
-		4CE2075026E049C4005FE571 /* HTML5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2074F26E049C4005FE571 /* HTML5.m */; };
+		4CF4AFB726E1060E00FE18CB /* HTML5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE2074F26E049C4005FE571 /* HTML5.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				4CE2073326E004FE005FE571 /* toolkit */,
-				4CE2074726E04995005FE571 /* HTML5 */,
 				4CE2073226E004FE005FE571 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,16 +84,9 @@
 				4CE2073C26E0056C005FE571 /* root_patch.c */,
 				4CE2073D26E0056C005FE571 /* root_patch.h */,
 				4CE2073426E004FE005FE571 /* main.c */,
-			);
-			path = toolkit;
-			sourceTree = "<group>";
-		};
-		4CE2074726E04995005FE571 /* HTML5 */ = {
-			isa = PBXGroup;
-			children = (
 				4CE2074F26E049C4005FE571 /* HTML5.m */,
 			);
-			path = HTML5;
+			path = toolkit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,7 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE2075026E049C4005FE571 /* HTML5.m in Sources */,
+				4CF4AFB726E1060E00FE18CB /* HTML5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

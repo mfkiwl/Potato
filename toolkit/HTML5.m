@@ -10,7 +10,7 @@ NSString *dynamicParserHandler(Renderer * r, id object) {
     [head setValue:@"head" forKey:@"t"];
     [head setValue:[dictionary valueForKey:@"h"] forKey:@"i"];
     
-    NSMutableDictionary *body;
+    NSMutableDictionary *body = [[NSMutableDictionary alloc] init];
     [body setValue:@"body" forKey:@"t"];
     [body setValue:[dictionary valueForKey:@"b"] forKey:@"i"];
     
